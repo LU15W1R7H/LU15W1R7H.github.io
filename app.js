@@ -104,13 +104,15 @@ function updateLoop(){
         
         gc.fillStyle = "#000000";
         gc.fillRect(0, 0, canvas.width, canvas.height);
+        
+        if(key_w) circles[0].speedy -= 0.25;
+        if(key_s) circles[0].speedy += 0.25;
+        if(key_a) circles[0].speedx -= 0.25;
+        if(key_d) circles[0].speedx += 0.25;
+
         for(var i = 0; i<circles.length; i++){
             var c = circles[i];
             
-            if(key_w) circles[i].speedy -= 0.25;
-            if(key_s) circles[i].speedy += 0.25;
-            if(key_a) circles[i].speedx -= 0.25;
-            if(key_d) circles[i].speedx += 0.25;
             
             c.speedx *= 0.98;
             c.speedy *= 0.98;
